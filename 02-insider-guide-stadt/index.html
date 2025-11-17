@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insider-Guide Musterstadt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📍 Musterstadt Guide</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Start</a></li>
+                <li><a href="essen.html">Essen 🍕</a></li>
+                <li><a href="freizeit.html">Freizeit 🎮</a></li>
+                <li><a href="sport.html">Sport ⚽</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Dein Insider-Guide für Musterstadt</h2>
+            <p class="subtitle">Die coolsten Spots von Jugendlichen für Jugendliche</p>
+            <p class="hero-text">
+                Hier findest du die besten Orte in unserer Stadt - getestet und bewertet von uns!
+                Egal ob du Hunger hast, chillen willst oder Sport machen möchtest - wir zeigen dir,
+                wo es richtig abgeht! 🔥
+            </p>
+        </div>
+    </section>
+
+    <!-- Schnellübersicht -->
+    <section class="quick-nav">
+        <div class="container">
+            <h2>Entdecke die besten Spots</h2>
+            <div class="category-grid">
+                <a href="essen.html" class="category-card">
+                    <div class="category-icon">🍕</div>
+                    <h3>Essen & Trinken</h3>
+                    <p>Die besten Dönerläden, Pizzerien, Bubble Tea Shops und mehr</p>
+                    <span class="spot-count">12 Spots</span>
+                </a>
+                <a href="freizeit.html" class="category-card">
+                    <div class="category-icon">🎮</div>
+                    <h3>Freizeit & Chillen</h3>
+                    <p>Parks, Kino, Gaming-Cafés und entspannte Treffpunkte</p>
+                    <span class="spot-count">10 Spots</span>
+                </a>
+                <a href="sport.html" class="category-card">
+                    <div class="category-icon">⚽</div>
+                    <h3>Sport & Action</h3>
+                    <p>Skaterplatz, Fußballplätze, Fitnessstudios und Freibad</p>
+                    <span class="spot-count">8 Spots</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stadt-Karte -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Interaktive Stadt-Karte</h2>
+            <p class="map-description">Hier siehst du alle wichtigen Locations auf einen Blick</p>
+
+            <!-- Karten-Platzhalter -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-marker" style="top: 30%; left: 40%;" data-category="essen">
+                        <span>🍕</span>
+                        <div class="marker-tooltip">Pizza Palace</div>
+                    </div>
+                    <div class="map-marker" style="top: 50%; left: 60%;" data-category="essen">
+                        <span>🥙</span>
+                        <div class="marker-tooltip">Döner King</div>
+                    </div>
+                    <div class="map-marker" style="top: 25%; left: 70%;" data-category="freizeit">
+                        <span>🎬</span>
+                        <div class="marker-tooltip">CineStar</div>
+                    </div>
+                    <div class="map-marker" style="top: 60%; left: 30%;" data-category="freizeit">
+                        <span>🌳</span>
+                        <div class="marker-tooltip">Stadtpark</div>
+                    </div>
+                    <div class="map-marker" style="top: 70%; left: 50%;" data-category="sport">
+                        <span>🛹</span>
+                        <div class="marker-tooltip">Skaterplatz</div>
+                    </div>
+                    <div class="map-marker" style="top: 40%; left: 80%;" data-category="sport">
+                        <span>⚽</span>
+                        <div class="marker-tooltip">Bolzplatz Süd</div>
+                    </div>
+                    <p class="map-label">🗺️ Musterstadt Zentrum</p>
+                </div>
+            </div>
+
+            <!-- Legende -->
+            <div class="map-legend">
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #ff6b6b;">🍕</span>
+                    <span>Essen & Trinken</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #4ecdc4;">🎮</span>
+                    <span>Freizeit</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #95e1d3;">⚽</span>
+                    <span>Sport</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 5 Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <h2>⭐ Top 5 Highlights</h2>
+            <p class="section-description">Die absoluten Must-Visit Spots in Musterstadt</p>
+
+            <div class="highlights-list">
+                <div class="highlight-item">
+                    <div class="rank">1</div>
+                    <div class="highlight-content">
+                        <h3>Döner King 🥙</h3>
+                        <p>Bester Döner der Stadt! Riesen Portionen, mega lecker.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+                    </div>
+                    <a href="essen.html" class="highlight-link">Details →</a>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="rank">2</div>
+                    <div class="highlight-content">
+                        <h3>Skaterplatz am Kanal 🛹</h3>
+                        <p>Perfekte Rampen, coole Community. Ideal zum Skaten und Chillen.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+                    </div>
+                    <a href="sport.html" class="highlight-link">Details →</a>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="rank">3</div>
+                    <div class="highlight-content">
+                        <h3>Bubble Tea Heaven 🧋</h3>
+                        <p>Über 30 Sorten Bubble Tea. Instagram-worthy Deko!</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+                    </div>
+                    <a href="essen.html" class="highlight-link">Details →</a>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="rank">4</div>
+                    <div class="highlight-content">
+                        <h3>Game Arena 🎮</h3>
+                        <p>Gaming-Café mit PS5, High-End PCs und VR-Brillen.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+                    </div>
+                    <a href="freizeit.html" class="highlight-link">Details →</a>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="rank">5</div>
+                    <div class="highlight-content">
+                        <h3>Stadtpark 🌳</h3>
+                        <p>Riesiger Park mit Grillplätzen, Basketball-Court und Chill-Areas.</p>
+                        <div class="rating">⭐⭐⭐⭐☆ (4/5)</div>
+                    </div>
+                    <a href="freizeit.html" class="highlight-link">Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Bereit die Stadt zu erkunden?</h2>
+            <p>Wähle eine Kategorie und entdecke die coolsten Spots!</p>
+            <div class="cta-buttons">
+                <a href="essen.html" class="cta-btn">🍕 Essen & Trinken</a>
+                <a href="freizeit.html" class="cta-btn">🎮 Freizeit</a>
+                <a href="sport.html" class="cta-btn">⚽ Sport</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Musterstadt Insider-Guide | Von Schülern für Schüler</p>
+        </div>
+    </footer>
+</body>
+</html>
