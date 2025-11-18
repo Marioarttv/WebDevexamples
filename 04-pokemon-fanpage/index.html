@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Fanpage - Willkommen Trainer!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="pokeball-icon">⚪</span>
+                <h1>Pokemon World</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pokedex.html">Pokedex</a></li>
+                <li><a href="teams.html">Meine Teams</a></li>
+                <li><a href="typen.html">Typen-Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h2>Willkommen in der Pokemon-Welt! ⚡</h2>
+                <p class="hero-subtitle">Entdecke deine Lieblings-Pokemon, baue starke Teams und werde zum Pokemon-Meister!</p>
+                <div class="hero-buttons">
+                    <a href="pokedex.html" class="btn btn-primary">Zum Pokedex</a>
+                    <a href="teams.html" class="btn btn-secondary">Meine Teams</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Pokemon -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">⭐ Featured Pokemon</h2>
+            <p class="section-subtitle">Die beliebtesten und stärksten Pokemon</p>
+
+            <div class="pokemon-grid">
+                <!-- Pikachu -->
+                <div class="pokemon-card electric">
+                    <div class="pokemon-number">#025</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
+                    </div>
+                    <h3 class="pokemon-name">Pikachu</h3>
+                    <div class="pokemon-types">
+                        <span class="type electric">Elektro</span>
+                    </div>
+                    <p class="pokemon-description">
+                        Das Maus-Pokemon und Maskottchen der Serie! Pikachus elektrische Angriffe
+                        sind legendär. ⚡
+                    </p>
+                    <div class="pokemon-stats">
+                        <div class="stat">
+                            <span class="stat-label">HP</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 35%;"></div>
+                            </div>
+                            <span class="stat-value">35</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Angriff</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 55%;"></div>
+                            </div>
+                            <span class="stat-value">55</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Init.</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 90%;"></div>
+                            </div>
+                            <span class="stat-value">90</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charizard -->
+                <div class="pokemon-card fire">
+                    <div class="pokemon-number">#006</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard">
+                    </div>
+                    <h3 class="pokemon-name">Glurak</h3>
+                    <div class="pokemon-types">
+                        <span class="type fire">Feuer</span>
+                        <span class="type flying">Flug</span>
+                    </div>
+                    <p class="pokemon-description">
+                        Das ultimative Feuer-Pokemon! Gluraks Flamme brennt heißer, je stärker
+                        der Gegner ist. 🔥
+                    </p>
+                    <div class="pokemon-stats">
+                        <div class="stat">
+                            <span class="stat-label">HP</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 78%;"></div>
+                            </div>
+                            <span class="stat-value">78</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Angriff</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 84%;"></div>
+                            </div>
+                            <span class="stat-value">84</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Init.</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 100%;"></div>
+                            </div>
+                            <span class="stat-value">100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mewtu -->
+                <div class="pokemon-card psychic">
+                    <div class="pokemon-number">#150</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtwo">
+                    </div>
+                    <h3 class="pokemon-name">Mewtu</h3>
+                    <div class="pokemon-types">
+                        <span class="type psychic">Psycho</span>
+                    </div>
+                    <p class="pokemon-description">
+                        Das stärkste Psycho-Pokemon! Ein legendäres Pokemon mit unglaublicher
+                        mentaler Kraft. 🧠
+                    </p>
+                    <div class="pokemon-stats">
+                        <div class="stat">
+                            <span class="stat-label">HP</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 106%;"></div>
+                            </div>
+                            <span class="stat-value">106</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Sp.Atk</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 154%;"></div>
+                            </div>
+                            <span class="stat-value">154</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Init.</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 130%;"></div>
+                            </div>
+                            <span class="stat-value">130</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lucario -->
+                <div class="pokemon-card fighting">
+                    <div class="pokemon-number">#448</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png" alt="Lucario">
+                    </div>
+                    <h3 class="pokemon-name">Lucario</h3>
+                    <div class="pokemon-types">
+                        <span class="type fighting">Kampf</span>
+                        <span class="type steel">Stahl</span>
+                    </div>
+                    <p class="pokemon-description">
+                        Meister der Aura! Lucario kann die Gefühle anderer spüren und ist ein
+                        mächtiger Kämpfer. 👊
+                    </p>
+                    <div class="pokemon-stats">
+                        <div class="stat">
+                            <span class="stat-label">HP</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 70%;"></div>
+                            </div>
+                            <span class="stat-value">70</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Angriff</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 110%;"></div>
+                            </div>
+                            <span class="stat-value">110</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Init.</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 90%;"></div>
+                            </div>
+                            <span class="stat-value">90</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generation Overview -->
+    <section class="generations-section">
+        <div class="container">
+            <h2 class="section-title">🌍 Pokemon-Generationen</h2>
+            <p class="section-subtitle">Eine Reise durch alle Regionen</p>
+
+            <div class="generation-grid">
+                <div class="generation-card gen1">
+                    <div class="gen-number">Gen I</div>
+                    <h3>Kanto</h3>
+                    <p class="gen-year">1996</p>
+                    <p class="gen-pokemon">151 Pokemon</p>
+                    <p class="gen-description">Wo alles begann! Klassiker wie Pikachu, Glurak und Mewtu.</p>
+                    <div class="gen-starters">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bisasam" title="Bisasam">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Glumanda" title="Glumanda">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Schiggy" title="Schiggy">
+                    </div>
+                </div>
+
+                <div class="generation-card gen2">
+                    <div class="gen-number">Gen II</div>
+                    <h3>Johto</h3>
+                    <p class="gen-year">1999</p>
+                    <p class="gen-pokemon">100 neue Pokemon</p>
+                    <p class="gen-description">Tag/Nacht-System und Shiny Pokemon eingeführt!</p>
+                    <div class="gen-starters">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png" alt="Endivie" title="Endivie">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png" alt="Feurigel" title="Feurigel">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png" alt="Karnimani" title="Karnimani">
+                    </div>
+                </div>
+
+                <div class="generation-card gen3">
+                    <div class="gen-number">Gen III</div>
+                    <h3>Hoenn</h3>
+                    <p class="gen-year">2002</p>
+                    <p class="gen-pokemon">135 neue Pokemon</p>
+                    <p class="gen-description">Doppelkämpfe und Fähigkeiten wurden eingeführt!</p>
+                    <div class="gen-starters">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png" alt="Geckarbor" title="Geckarbor">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png" alt="Flemmli" title="Flemmli">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/258.png" alt="Hydropi" title="Hydropi">
+                    </div>
+                </div>
+
+                <div class="generation-card gen4">
+                    <div class="gen-number">Gen IV</div>
+                    <h3>Sinnoh</h3>
+                    <p class="gen-year">2006</p>
+                    <p class="gen-pokemon">107 neue Pokemon</p>
+                    <p class="gen-description">Physisch/Spezial-Split revolutionierte Kämpfe!</p>
+                    <div class="gen-starters">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png" alt="Chelast" title="Chelast">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png" alt="Panflam" title="Panflam">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/393.png" alt="Plinfa" title="Plinfa">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 10 -->
+    <section class="top10-section">
+        <div class="container">
+            <h2 class="section-title">🏆 Top 10 Stärkste Pokemon</h2>
+            <p class="section-subtitle">Die Giganten der Pokemon-Welt (nach Basis-Stats)</p>
+
+            <div class="top10-list">
+                <div class="top10-item rank-1">
+                    <div class="rank-badge">1</div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt="Mewtu">
+                    <div class="top10-info">
+                        <h3>Mega-Mewtu X/Y</h3>
+                        <p class="pokemon-type-text">Psycho / Kampf</p>
+                        <div class="total-stats">Basis-Stats: <strong>780</strong></div>
+                    </div>
+                </div>
+
+                <div class="top10-item rank-2">
+                    <div class="rank-badge">2</div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png" alt="Rayquaza">
+                    <div class="top10-info">
+                        <h3>Mega-Rayquaza</h3>
+                        <p class="pokemon-type-text">Drache / Flug</p>
+                        <div class="total-stats">Basis-Stats: <strong>780</strong></div>
+                    </div>
+                </div>
+
+                <div class="top10-item rank-3">
+                    <div class="rank-badge">3</div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="Glurak">
+                    <div class="top10-info">
+                        <h3>Mega-Glurak X/Y</h3>
+                        <p class="pokemon-type-text">Feuer / Drache</p>
+                        <div class="total-stats">Basis-Stats: <strong>634</strong></div>
+                    </div>
+                </div>
+
+                <div class="top10-item">
+                    <div class="rank-badge">4</div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/249.png" alt="Lugia">
+                    <div class="top10-info">
+                        <h3>Lugia</h3>
+                        <p class="pokemon-type-text">Psycho / Flug</p>
+                        <div class="total-stats">Basis-Stats: <strong>680</strong></div>
+                    </div>
+                </div>
+
+                <div class="top10-item">
+                    <div class="rank-badge">5</div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png" alt="Knakrack">
+                    <div class="top10-info">
+                        <h3>Mega-Knakrack</h3>
+                        <p class="pokemon-type-text">Drache / Boden</p>
+                        <div class="total-stats">Basis-Stats: <strong>700</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more">
+                <a href="pokedex.html" class="btn btn-secondary">Alle Pokemon ansehen →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="fun-facts">
+        <div class="container">
+            <h2 class="section-title">💡 Wusstest du schon?</h2>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">📊</div>
+                    <h3>1025+ Pokemon</h3>
+                    <p>Es gibt mittlerweile über 1025 verschiedene Pokemon über alle Generationen hinweg!</p>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-icon">🎨</div>
+                    <h3>Shiny Chance</h3>
+                    <p>Die Chance, einem Shiny Pokemon zu begegnen, liegt bei 1:4096 (ohne Items)!</p>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-icon">💪</div>
+                    <h3>Stärkste Attacke</h3>
+                    <p>Explosion ist mit 250 Basisstärke eine der stärksten Attacken im Spiel!</p>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-icon">⚡</div>
+                    <h3>Schnellstes Pokemon</h3>
+                    <p>Regieleki hat mit 200 die höchste Initiative aller Pokemon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bereit für dein Pokemon-Abenteuer? 🎮</h2>
+            <p>Erkunde den Pokedex, stelle dein Dream-Team zusammen und werde zum Pokemon-Meister!</p>
+            <div class="cta-buttons">
+                <a href="pokedex.html" class="btn btn-primary">Pokedex öffnen</a>
+                <a href="teams.html" class="btn btn-secondary">Team erstellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pokemon World</h3>
+                    <p>Deine ultimative Quelle für alles rund um Pokemon!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="pokedex.html">Pokedex</a></li>
+                        <li><a href="teams.html">Team-Builder</a></li>
+                        <li><a href="typen.html">Typen-Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ressourcen</h3>
+                    <ul>
+                        <li><a href="#">Pokemon.com</a></li>
+                        <li><a href="#">Bulbapedia</a></li>
+                        <li><a href="#">Serebii.net</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pokemon Fanpage | Pokemon © Nintendo, Game Freak, Creatures Inc.</p>
+                <p class="disclaimer">Dies ist eine inoffizielle Fan-Seite. Alle Rechte an Pokemon gehören ihren jeweiligen Besitzern.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

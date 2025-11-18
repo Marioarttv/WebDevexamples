@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex - Pokemon Fanpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="pokeball-icon">⚪</span>
+                <h1>Pokemon World</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pokedex.html" class="active">Pokedex</a></li>
+                <li><a href="teams.html">Meine Teams</a></li>
+                <li><a href="typen.html">Typen-Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header pokedex-header">
+        <div class="container">
+            <h2>📱 Pokedex</h2>
+            <p>Entdecke alle Pokemon und ihre Fähigkeiten!</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <h3>🔍 Filter nach Typ:</h3>
+            <div class="type-filters">
+                <button class="type-filter active" data-type="all">Alle</button>
+                <button class="type-filter fire" data-type="fire">🔥 Feuer</button>
+                <button class="type-filter water" data-type="water">💧 Wasser</button>
+                <button class="type-filter grass" data-type="grass">🌿 Pflanze</button>
+                <button class="type-filter electric" data-type="electric">⚡ Elektro</button>
+                <button class="type-filter psychic" data-type="psychic">🔮 Psycho</button>
+                <button class="type-filter dragon" data-type="dragon">🐉 Drache</button>
+                <button class="type-filter dark" data-type="dark">🌙 Unlicht</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pokedex Grid -->
+    <section class="pokedex-section">
+        <div class="container">
+            <div class="pokemon-grid pokedex-grid">
+
+                <!-- Bisasam -->
+                <div class="pokemon-card grass poison" data-number="001">
+                    <div class="pokemon-number">#001</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bisasam">
+                    </div>
+                    <h3 class="pokemon-name">Bisasam</h3>
+                    <div class="pokemon-types">
+                        <span class="type grass">Pflanze</span>
+                        <span class="type poison">Gift</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Samen-Pokemon</p>
+                </div>
+
+                <!-- Glumanda -->
+                <div class="pokemon-card fire" data-number="004">
+                    <div class="pokemon-number">#004</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Glumanda">
+                    </div>
+                    <h3 class="pokemon-name">Glumanda</h3>
+                    <div class="pokemon-types">
+                        <span class="type fire">Feuer</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Echsen-Pokemon</p>
+                </div>
+
+                <!-- Schiggy -->
+                <div class="pokemon-card water" data-number="007">
+                    <div class="pokemon-number">#007</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" alt="Schiggy">
+                    </div>
+                    <h3 class="pokemon-name">Schiggy</h3>
+                    <div class="pokemon-types">
+                        <span class="type water">Wasser</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Minikröten-Pokemon</p>
+                </div>
+
+                <!-- Pikachu -->
+                <div class="pokemon-card electric" data-number="025">
+                    <div class="pokemon-number">#025</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
+                    </div>
+                    <h3 class="pokemon-name">Pikachu</h3>
+                    <div class="pokemon-types">
+                        <span class="type electric">Elektro</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Maus-Pokemon</p>
+                </div>
+
+                <!-- Evoli -->
+                <div class="pokemon-card normal" data-number="133">
+                    <div class="pokemon-number">#133</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Evoli">
+                    </div>
+                    <h3 class="pokemon-name">Evoli</h3>
+                    <div class="pokemon-types">
+                        <span class="type normal">Normal</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Evolutionspokemon</p>
+                </div>
+
+                <!-- Mewtu -->
+                <div class="pokemon-card psychic" data-number="150">
+                    <div class="pokemon-number">#150</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtu">
+                    </div>
+                    <h3 class="pokemon-name">Mewtu</h3>
+                    <div class="pokemon-types">
+                        <span class="type psychic">Psycho</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Genetik-Pokemon (Legendär)</p>
+                </div>
+
+                <!-- Pii -->
+                <div class="pokemon-card fairy" data-number="035">
+                    <div class="pokemon-number">#035</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png" alt="Piepi">
+                    </div>
+                    <h3 class="pokemon-name">Piepi</h3>
+                    <div class="pokemon-types">
+                        <span class="type fairy">Fee</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Feen-Pokemon</p>
+                </div>
+
+                <!-- Dragoran -->
+                <div class="pokemon-card dragon flying" data-number="149">
+                    <div class="pokemon-number">#149</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" alt="Dragoran">
+                    </div>
+                    <h3 class="pokemon-name">Dragoran</h3>
+                    <div class="pokemon-types">
+                        <span class="type dragon">Drache</span>
+                        <span class="type flying">Flug</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Drachen-Pokemon</p>
+                </div>
+
+                <!-- Glurak -->
+                <div class="pokemon-card fire flying" data-number="006">
+                    <div class="pokemon-number">#006</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Glurak">
+                    </div>
+                    <h3 class="pokemon-name">Glurak</h3>
+                    <div class="pokemon-types">
+                        <span class="type fire">Feuer</span>
+                        <span class="type flying">Flug</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Flammen-Pokemon</p>
+                </div>
+
+                <!-- Relaxo -->
+                <div class="pokemon-card normal" data-number="143">
+                    <div class="pokemon-number">#143</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png" alt="Relaxo">
+                    </div>
+                    <h3 class="pokemon-name">Relaxo</h3>
+                    <div class="pokemon-types">
+                        <span class="type normal">Normal</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Tagträumer-Pokemon</p>
+                </div>
+
+                <!-- Gengar -->
+                <div class="pokemon-card ghost poison" data-number="094">
+                    <div class="pokemon-number">#094</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" alt="Gengar">
+                    </div>
+                    <h3 class="pokemon-name">Gengar</h3>
+                    <div class="pokemon-types">
+                        <span class="type ghost">Geist</span>
+                        <span class="type poison">Gift</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Schatten-Pokemon</p>
+                </div>
+
+                <!-- Lucario -->
+                <div class="pokemon-card fighting steel" data-number="448">
+                    <div class="pokemon-number">#448</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png" alt="Lucario">
+                    </div>
+                    <h3 class="pokemon-name">Lucario</h3>
+                    <div class="pokemon-types">
+                        <span class="type fighting">Kampf</span>
+                        <span class="type steel">Stahl</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Aura-Pokemon</p>
+                </div>
+
+                <!-- Greninja -->
+                <div class="pokemon-card water dark" data-number="658">
+                    <div class="pokemon-number">#658</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png" alt="Greninja">
+                    </div>
+                    <h3 class="pokemon-name">Quajutsu</h3>
+                    <div class="pokemon-types">
+                        <span class="type water">Wasser</span>
+                        <span class="type dark">Unlicht</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Ninja-Pokemon</p>
+                </div>
+
+                <!-- Rayquaza -->
+                <div class="pokemon-card dragon flying" data-number="384">
+                    <div class="pokemon-number">#384</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png" alt="Rayquaza">
+                    </div>
+                    <h3 class="pokemon-name">Rayquaza</h3>
+                    <div class="pokemon-types">
+                        <span class="type dragon">Drache</span>
+                        <span class="type flying">Flug</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Himmelhoch-Pokemon (Legendär)</p>
+                </div>
+
+                <!-- Garados -->
+                <div class="pokemon-card water flying" data-number="130">
+                    <div class="pokemon-number">#130</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png" alt="Garados">
+                    </div>
+                    <h3 class="pokemon-name">Garados</h3>
+                    <div class="pokemon-types">
+                        <span class="type water">Wasser</span>
+                        <span class="type flying">Flug</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Grausam-Pokemon</p>
+                </div>
+
+                <!-- Knakrack -->
+                <div class="pokemon-card dragon ground" data-number="445">
+                    <div class="pokemon-number">#445</div>
+                    <div class="pokemon-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png" alt="Knakrack">
+                    </div>
+                    <h3 class="pokemon-name">Knakrack</h3>
+                    <div class="pokemon-types">
+                        <span class="type dragon">Drache</span>
+                        <span class="type ground">Boden</span>
+                    </div>
+                    <p class="pokemon-mini-desc">Das Mach-Pokemon</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Showcase -->
+    <section class="evolution-showcase">
+        <div class="container">
+            <h2 class="section-title">🔄 Evolutions-Ketten</h2>
+            <p class="section-subtitle">Beliebte Pokemon-Entwicklungen</p>
+
+            <!-- Glumanda Evolution -->
+            <div class="evolution-chain">
+                <h3 class="chain-title">Glumanda-Reihe</h3>
+                <div class="evolution-steps">
+                    <div class="evo-pokemon">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Glumanda">
+                        <p class="evo-name">Glumanda</p>
+                        <p class="evo-number">#004</p>
+                    </div>
+                    <div class="evo-arrow">
+                        <span>→</span>
+                        <p class="evo-method">Lvl. 16</p>
+                    </div>
+                    <div class="evo-pokemon">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="Glutexo">
+                        <p class="evo-name">Glutexo</p>
+                        <p class="evo-number">#005</p>
+                    </div>
+                    <div class="evo-arrow">
+                        <span>→</span>
+                        <p class="evo-method">Lvl. 36</p>
+                    </div>
+                    <div class="evo-pokemon">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Glurak">
+                        <p class="evo-name">Glurak</p>
+                        <p class="evo-number">#006</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evoli Evolution -->
+            <div class="evolution-chain special">
+                <h3 class="chain-title">Evoli - Die Evolutions-Vielfalt</h3>
+                <div class="evolution-hub">
+                    <div class="hub-center">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Evoli">
+                        <p class="evo-name">Evoli #133</p>
+                    </div>
+                    <div class="hub-evolutions">
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png" alt="Aquana">
+                            <p>Aquana (Wasser)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png" alt="Blitza">
+                            <p>Blitza (Elektro)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png" alt="Flamara">
+                            <p>Flamara (Feuer)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png" alt="Psiana">
+                            <p>Psiana (Psycho)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png" alt="Nachtara">
+                            <p>Nachtara (Unlicht)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png" alt="Folipurba">
+                            <p>Folipurba (Pflanze)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png" alt="Glaziola">
+                            <p>Glaziola (Eis)</p>
+                        </div>
+                        <div class="hub-evo">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png" alt="Feelinara">
+                            <p>Feelinara (Fee)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pokemon World</h3>
+                    <p>Deine ultimative Quelle für alles rund um Pokemon!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Team-Builder</a></li>
+                        <li><a href="typen.html">Typen-Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ressourcen</h3>
+                    <ul>
+                        <li><a href="#">Pokemon.com</a></li>
+                        <li><a href="#">Bulbapedia</a></li>
+                        <li><a href="#">Serebii.net</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pokemon Fanpage | Pokemon © Nintendo, Game Freak, Creatures Inc.</p>
+                <p class="disclaimer">Dies ist eine inoffizielle Fan-Seite. Alle Rechte an Pokemon gehören ihren jeweiligen Besitzern.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
