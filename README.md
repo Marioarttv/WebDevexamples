@@ -1,6 +1,6 @@
 # 🌐 WebDev Beispiel-Projekte für 10. Klasse
 
-Willkommen zu den WebDev-Beispielprojekten! Hier findest du **3 vollständige Webseiten-Beispiele**, die dir als Inspiration für dein eigenes Projekt dienen können.
+Willkommen zu den WebDev-Beispielprojekten! Hier findest du **4 vollständige Webseiten-Beispiele**, die dir als Inspiration für dein eigenes Projekt dienen können.
 
 ## 📁 Projektübersicht
 
@@ -49,6 +49,31 @@ Gaming-Website mit Reviews und Tipps:
 - Gaming-Reviews
 - Esports-Infos
 - Hobby-Blogs zu Spielen
+
+---
+
+### 4. ⚡ Pokemon Fanpage
+**Ordner:** `04-pokemon-fanpage`
+
+Umfangreiche Pokemon-Website mit echten Bildern:
+- 🏠 Home mit Featured Pokemon & Generationen
+- 📱 Pokedex mit 15+ Pokemon und Evolutions-Ketten
+- ⚔️ Team-Builder mit Dream-Teams & Strategien
+- 🌈 Typen-Guide mit Effektivitäts-Tabelle & Matchups
+- 🎨 Alle 18 Pokemon-Typen mit eigenen Farben
+- 📊 Stats-Bars, Pro/Contra-Listen und Tabellen
+
+**Geeignet für:**
+- Pokemon-Fans
+- Gaming-Datenbanken
+- Strategie-Guides
+- Fan-Seiten zu Games/Animes
+
+**Besonderheiten:**
+- Echte Pokemon-Bilder von PokeAPI
+- Pokemon-typisches Design (Rot/Weiß/Gelb)
+- Typ-basierte Farbschemata
+- Komplexe Tabellen und Layouts
 
 ---
 
@@ -350,6 +375,13 @@ Einfach im HTML die Texte ändern:
 - 📊 Mehr Statistiken
 - 👤 Spieler-Profile
 
+### Projekt 4 (Pokemon):
+- 🔍 Suchfunktion für Pokemon
+- 💾 Team-Builder mit Speicherfunktion
+- 🆚 Pokemon-Vergleichstool
+- 📈 Mehr Statistiken und Charts
+- 🎮 Attacken-Datenbank
+
 ---
 
 ## 🛠️ Empfohlene Tools
@@ -478,8 +510,13 @@ Experimentiere, probiere aus und hab Spaß beim Coden! Die besten Webseiten ents
 
 Diese Beispiel-Projekte wurden erstellt für den WebDev-Unterricht der 10. Klasse.
 
-- Projekt 1: Portfolio-Beispiel
-- Projekt 2: Stadt-Guide-Beispiel
-- Projekt 3: Gaming-Website-Beispiel
+- Projekt 1: Portfolio-Beispiel (Meine Hobbys & Ich)
+- Projekt 2: Stadt-Guide-Beispiel (Insider-Guide)
+- Projekt 3: Gaming-Website-Beispiel (Gaming & Esports Ecke)
+- Projekt 4: Pokemon-Fanpage (mit echten Pokemon-Bildern)
+
+**Bildquellen:**
+- Pokemon-Bilder: [PokeAPI Sprites](https://github.com/PokeAPI/sprites)
+- Pokemon © Nintendo, Game Freak, Creatures Inc.
 
 **Lizenz:** Frei verwendbar für Bildungszwecke ✨
