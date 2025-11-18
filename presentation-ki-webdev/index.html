@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development mit KI-Tools - Präsentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Controls -->
+    <div class="controls">
+        <button id="prev" class="control-btn">◀</button>
+        <span id="slide-number" class="slide-counter">1 / 14</span>
+        <button id="next" class="control-btn">▶</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <!-- Slides Container -->
+    <div class="slides-container">
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <div class="slide-content title-slide">
+                <h1>Web Development mit KI-Tools</h1>
+                <h2>Moderne Webentwicklung mit ChatGPT & Co.</h2>
+                <p class="subtitle">Informatik - 10. Klasse</p>
+                <div class="emoji-large">🤖💻✨</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Was sind KI-Coding-Assistenten? -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Was sind KI-Coding-Assistenten?</h1>
+                <div class="content-box">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <span class="emoji">💬</span>
+                            <h3>Chatbasiert</h3>
+                            <p>Du beschreibst in natürlicher Sprache, was du möchtest</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">⚡</span>
+                            <h3>Schnell</h3>
+                            <p>Code wird in Sekunden generiert</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🎓</span>
+                            <h3>Lernhilfe</h3>
+                            <p>Erklärt Code und beantwortet Fragen</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🔧</span>
+                            <h3>Debugging</h3>
+                            <p>Hilft bei der Fehlersuche</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Warum KI nutzen? -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Warum KI beim Programmieren nutzen?</h1>
+                <div class="two-column">
+                    <div class="column benefits">
+                        <h3>✅ Vorteile</h3>
+                        <ul>
+                            <li>Schneller Einstieg ohne Vorkenntnisse</li>
+                            <li>Sofortiges Feedback und Hilfe</li>
+                            <li>Kreative Ideen umsetzen</li>
+                            <li>Von Best Practices lernen</li>
+                            <li>Zeitersparnis bei Routine-Aufgaben</li>
+                        </ul>
+                    </div>
+                    <div class="column warnings">
+                        <h3>⚠️ Wichtig zu wissen</h3>
+                        <ul>
+                            <li>KI macht Fehler - immer Code prüfen!</li>
+                            <li>Verstehen ist wichtiger als kopieren</li>
+                            <li>KI ersetzt nicht das Lernen</li>
+                            <li>Eigene Kreativität bleibt wichtig</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Verfügbare Tools -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Verfügbare KI-Tools</h1>
+                <div class="tools-grid">
+                    <div class="tool-card primary">
+                        <h3>💬 ChatGPT (OpenAI)</h3>
+                        <span class="badge free">KOSTENLOS</span>
+                        <p><strong>Für uns heute:</strong></p>
+                        <ul>
+                            <li>Im Browser nutzbar</li>
+                            <li>Keine Installation nötig</li>
+                            <li>Perfekt für Anfänger</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>🚀 Claude Code</h3>
+                        <span class="badge premium">PRO</span>
+                        <p>Terminal-basiert, sehr mächtig</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>⚡ Cursor</h3>
+                        <span class="badge premium">PRO</span>
+                        <p>Code-Editor mit eingebauter KI</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>🤖 GitHub Copilot</h3>
+                        <span class="badge premium">PRO</span>
+                        <p>Auto-Vervollständigung beim Tippen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Die 5 Regeln für gutes Prompting -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Die 5 Regeln für gutes Prompting</h1>
+                <div class="rules-list">
+                    <div class="rule-item">
+                        <span class="rule-number">1</span>
+                        <div class="rule-content">
+                            <h3>Sei spezifisch</h3>
+                            <p>"Erstelle eine Webseite über Gaming" → ❌</p>
+                            <p>"Erstelle eine Gaming-Webseite mit 3 Game-Reviews, einem Header und Footer" → ✅</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">2</span>
+                        <div class="rule-content">
+                            <h3>Gib Kontext</h3>
+                            <p>Erkläre, was du bereits hast und was du erreichen willst</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">3</span>
+                        <div class="rule-content">
+                            <h3>Beschreibe das Design</h3>
+                            <p>Farben, Layout, Stil - je genauer, desto besser!</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">4</span>
+                        <div class="rule-content">
+                            <h3>Iteriere & verfeinere</h3>
+                            <p>Erste Version gut? Jetzt optimieren: "Mach den Header größer und nutze Flexbox"</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-number">5</span>
+                        <div class="rule-content">
+                            <h3>Frag nach Erklärungen</h3>
+                            <p>"Erkläre mir, wie dieser CSS-Code funktioniert"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Gute vs Schlechte Prompts -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Beispiel: Gute vs Schlechte Prompts</h1>
+                <div class="comparison">
+                    <div class="bad-prompt">
+                        <h3>❌ Schlecht</h3>
+                        <div class="prompt-box bad">
+                            <p>"Mach mir eine Webseite"</p>
+                        </div>
+                        <ul class="explanation">
+                            <li>Keine Details zum Thema</li>
+                            <li>Kein Design vorgegeben</li>
+                            <li>Keine Struktur definiert</li>
+                        </ul>
+                    </div>
+                    <div class="good-prompt">
+                        <h3>✅ Gut</h3>
+                        <div class="prompt-box good">
+                            <p>"Erstelle eine HTML-Seite über Fußball mit:</p>
+                            <ul>
+                                <li>Überschrift 'Meine Lieblings-Bundesliga-Teams'</li>
+                                <li>3 Team-Karten mit Name, Logo-Platzhalter, kurzer Beschreibung</li>
+                                <li>CSS mit grün-weißem Farbschema</li>
+                                <li>Flexbox für die Team-Karten</li>
+                                <li>Kommentare im Code zur Erklärung"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Live Demo Prompt -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Live Demo - Gemeinsam ausprobieren!</h1>
+                <div class="demo-box">
+                    <h3>Wir erstellen jetzt gemeinsam:</h3>
+                    <div class="demo-prompt">
+                        <p><strong>Prompt:</strong></p>
+                        <div class="code-box">
+                            Erstelle eine einfache HTML-Seite über Musikbands mit:
+                            <ul>
+                                <li>Einem Header mit Titel "Top 3 Bands"</li>
+                                <li>3 Band-Karten (Name, Genre, Beschreibung)</li>
+                                <li>Styling mit dunklem Hintergrund und bunten Akzenten</li>
+                                <li>Hover-Effekt auf den Karten</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="demo-steps">
+                        <h4>Schritte:</h4>
+                        <ol>
+                            <li>ChatGPT öffnen (chat.openai.com)</li>
+                            <li>Prompt eingeben</li>
+                            <li>Code kopieren</li>
+                            <li>In VS Code einfügen und testen</li>
+                            <li>Anpassungen erfragen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Prompt Battle -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>🎮 Prompt Battle - Interaktiv!</h1>
+                <div class="battle-box">
+                    <h3>Wer schreibt den besseren Prompt?</h3>
+                    <p class="battle-desc">2 Freiwillige kommen nach vorne und schreiben einen Prompt für:</p>
+                    <div class="challenge">
+                        <p><strong>Challenge:</strong> "Portfolio-Seite für einen Fotografen"</p>
+                    </div>
+                    <div class="battle-rules">
+                        <h4>Bewertungskriterien:</h4>
+                        <ul>
+                            <li>✅ Spezifität (Wie genau ist die Beschreibung?)</li>
+                            <li>🎨 Design-Details (Farben, Layout, Stil)</li>
+                            <li>📋 Struktur (Welche Elemente soll die Seite haben?)</li>
+                            <li>💡 Kreativität (Besondere Features?)</li>
+                        </ul>
+                    </div>
+                    <p class="battle-note">⏱️ 3 Minuten Zeit - dann vergleichen wir die Ergebnisse!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Hands-On Projekt -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Hands-On Projekt (35 Min)</h1>
+                <div class="project-box">
+                    <h3>Deine Aufgabe:</h3>
+                    <p>Erstelle eine eigene Webseite zu einem Thema deiner Wahl!</p>
+                    <div class="difficulty-levels">
+                        <div class="level">
+                            <span class="level-badge easy">🟢 Einfach</span>
+                            <p>1 Seite, 3-4 Bereiche, grundlegendes CSS</p>
+                            <small>15-20 Min</small>
+                        </div>
+                        <div class="level">
+                            <span class="level-badge medium">🟡 Mittel</span>
+                            <p>2 Seiten mit Navigation, Cards, Hover-Effekte</p>
+                            <small>25-30 Min</small>
+                        </div>
+                        <div class="level">
+                            <span class="level-badge hard">🔴 Schwer</span>
+                            <p>3+ Seiten, komplexes Layout, Animationen</p>
+                            <small>35-40 Min</small>
+                        </div>
+                    </div>
+                    <div class="project-tips">
+                        <h4>Tipps:</h4>
+                        <ul>
+                            <li>Nutze die Prompt-Sammlung als Hilfe</li>
+                            <li>Starte einfach, dann verfeinern</li>
+                            <li>Teste regelmäßig im Browser</li>
+                            <li>Frag die KI bei Fehlern um Hilfe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Themenvorschläge -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Themenvorschläge für dein Projekt</h1>
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <span class="theme-emoji">🎮</span>
+                        <h3>Gaming</h3>
+                        <p>Game-Reviews, Top-Listen, Tipps & Tricks</p>
+                    </div>
+                    <div class="theme-card">
+                        <span class="theme-emoji">⚽</span>
+                        <h3>Sport</h3>
+                        <p>Lieblings-Teams, Spieler-Stats, News</p>
+                    </div>
+                    <div class="theme-card">
+                        <span class="theme-emoji">🎵</span>
+                        <h3>Musik</h3>
+                        <p>Playlists, Band-Infos, Konzerte</p>
+                    </div>
+                    <div class="theme-card">
+                        <span class="theme-emoji">🎨</span>
+                        <h3>Portfolio</h3>
+                        <p>Über mich, Hobbys, Skills</p>
+                    </div>
+                    <div class="theme-card">
+                        <span class="theme-emoji">🍕</span>
+                        <h3>Food</h3>
+                        <p>Restaurant-Guide, Rezepte</p>
+                    </div>
+                    <div class="theme-card">
+                        <span class="theme-emoji">✨</span>
+                        <h3>Eigene Idee!</h3>
+                        <p>Was interessiert dich?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Tipps & Tricks -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Pro-Tipps für bessere Ergebnisse</h1>
+                <div class="tips-container">
+                    <div class="tip-item">
+                        <span class="tip-icon">💡</span>
+                        <div class="tip-text">
+                            <h4>Schritt für Schritt</h4>
+                            <p>Erst HTML erstellen lassen, dann CSS hinzufügen, dann verfeinern</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🔍</span>
+                        <div class="tip-text">
+                            <h4>Code verstehen</h4>
+                            <p>Frag: "Erkläre mir jeden Teil dieses Codes in einfachen Worten"</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🎯</span>
+                        <div class="tip-text">
+                            <h4>Beispiele geben</h4>
+                            <p>"Mach es ähnlich wie auf Spotify/Instagram/YouTube"</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🔄</span>
+                        <div class="tip-text">
+                            <h4>Iterieren</h4>
+                            <p>Nicht zufrieden? "Mach den Text größer", "Ändere die Farbe zu blau"</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🐛</span>
+                        <div class="tip-text">
+                            <h4>Debugging</h4>
+                            <p>Fehler? Kopiere die Fehlermeldung in ChatGPT!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Häufige Probleme -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Häufige Probleme & Lösungen</h1>
+                <div class="problems-list">
+                    <div class="problem-item">
+                        <div class="problem">
+                            <h4>❌ Problem: Seite sieht komisch aus</h4>
+                        </div>
+                        <div class="solution">
+                            <h4>✅ Lösung:</h4>
+                            <ul>
+                                <li>HTML und CSS in separate Dateien?</li>
+                                <li>CSS richtig eingebunden? <code>&lt;link rel="stylesheet" href="style.css"&gt;</code></li>
+                                <li>Beide Dateien im gleichen Ordner?</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <div class="problem">
+                            <h4>❌ Problem: KI macht immer die gleichen Fehler</h4>
+                        </div>
+                        <div class="solution">
+                            <h4>✅ Lösung:</h4>
+                            <p>Neuer Chat! Starte eine frische Konversation mit verbessertem Prompt</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <div class="problem">
+                            <h4>❌ Problem: Ich verstehe den Code nicht</h4>
+                        </div>
+                        <div class="solution">
+                            <h4>✅ Lösung:</h4>
+                            <p>Frag nach! "Erkläre mir diesen Code Zeile für Zeile für Anfänger"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Reflexion & Präsentation -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Präsentation & Reflexion</h1>
+                <div class="presentation-box">
+                    <h3>🎨 Gallery Walk (10 Min)</h3>
+                    <p>Zeig deine Webseite deinen Mitschülern!</p>
+                    <div class="reflection-questions">
+                        <h4>Reflexionsfragen:</h4>
+                        <ul>
+                            <li>Was hat gut funktioniert beim Prompting?</li>
+                            <li>Wo hattest du Schwierigkeiten?</li>
+                            <li>Was hast du über HTML/CSS gelernt?</li>
+                            <li>Würdest du KI-Tools wieder nutzen?</li>
+                            <li>Was würdest du beim nächsten Mal anders machen?</li>
+                        </ul>
+                    </div>
+                    <div class="sharing-note">
+                        <p><strong>Optional:</strong> Teile deinen besten Prompt mit der Klasse!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Zusammenfassung & Ausblick -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Zusammenfassung & Ausblick</h1>
+                <div class="summary-box">
+                    <h3>Was wir gelernt haben:</h3>
+                    <ul class="summary-list">
+                        <li>✅ KI-Tools können beim Programmieren helfen</li>
+                        <li>✅ Gute Prompts sind spezifisch und detailliert</li>
+                        <li>✅ Iteratives Arbeiten führt zu besseren Ergebnissen</li>
+                        <li>✅ Code verstehen ist wichtiger als Code kopieren</li>
+                    </ul>
+                </div>
+                <div class="homework-box">
+                    <h3>📝 Hausaufgabe (freiwillig):</h3>
+                    <p>Erweitere deine Webseite um eine weitere Seite oder ein cooles Feature!</p>
+                    <p>Nutze ChatGPT und dokumentiere deine besten Prompts.</p>
+                </div>
+                <div class="next-steps">
+                    <h3>🚀 Nächste Schritte:</h3>
+                    <ul>
+                        <li>JavaScript mit KI lernen</li>
+                        <li>Responsive Design vertiefen</li>
+                        <li>Eigene Projekte umsetzen</li>
+                    </ul>
+                </div>
+                <div class="closing">
+                    <h2>Viel Erfolg beim Coden! 🎉</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
