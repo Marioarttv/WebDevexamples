@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewertungskriterien | AI Web Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for grading page */
+        .grading-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .criteria-card {
+            background: var(--color-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .criteria-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+
+        .criteria-header h3 {
+            color: var(--color-secondary);
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .points {
+            background: rgba(112, 0, 255, 0.2);
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .criteria-list {
+            list-style: none;
+        }
+
+        .criteria-list li {
+            margin-bottom: 1.5rem;
+        }
+
+        .criteria-list strong {
+            display: block;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .criteria-list p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Table */
+        .grading-table-container {
+            background: var(--color-surface);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        th {
+            color: var(--color-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grade-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .grade-1 { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .grade-2 { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+        .grade-3 { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .grade-4 { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .grade-5 { background: rgba(255, 255, 255, 0.1); color: #9ca3af; }
+
+        .back-nav {
+            margin-bottom: 2rem;
+        }
+
+        .back-nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .back-nav a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">AI.WEBDEV</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="back-nav">
+                <a href="index.html">&larr; Zurück zur Übersicht</a>
+            </div>
+
+            <section class="hero" style="padding: 2rem 0 4rem; text-align: left; background: none;">
+                <h1>Bewertungskriterien</h1>
+                <p class="lead" style="margin: 0;">Fokus auf Problemlösung, Kommunikation und Verständnis.</p>
+            </section>
+
+            <div class="grading-grid">
+                <!-- Criteria 1 -->
+                <article class="criteria-card">
+                    <div class="criteria-header">
+                        <h3>1. Prompt Engineering</h3>
+                        <span class="points">30 Pkt</span>
+                    </div>
+                    <ul class="criteria-list">
+                        <li>
+                            <strong>Präzision der Anweisungen (10 Pkt)</strong>
+                            <p>Wurden Kontext, Tech-Stack und Design-Vorgaben klar kommuniziert? Positiv: "Erstelle eine Landing Page mit Flexbox..." vs. Negativ: "Mach Website".</p>
+                        </li>
+                        <li>
+                            <strong>Iterativer Prozess (10 Pkt)</strong>
+                            <p>Wurde das Ergebnis kritisch geprüft und durch Folge-Prompts verfeinert?</p>
+                        </li>
+                        <li>
+                            <strong>Problembehandlung (10 Pkt)</strong>
+                            <p>Wie wurde mit Fehlern oder Halluzinationen der KI umgegangen?</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Criteria 2 -->
+                <article class="criteria-card">
+                    <div class="criteria-header">
+                        <h3>2. Code-Verständnis</h3>
+                        <span class="points">30 Pkt</span>
+                    </div>
+                    <ul class="criteria-list">
+                        <li>
+                            <strong>Mündlicher Check / Kommentare (15 Pkt)</strong>
+                            <p>Kann der Schüler erklären, was ein bestimmter Code-Block tut? Sind wichtige Stellen kommentiert?</p>
+                        </li>
+                        <li>
+                            <strong>Semantik & Struktur (15 Pkt)</strong>
+                            <p>Wurde semantisches HTML (`header`, `main`) verwendet? Ist die Dateistruktur sauber?</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Criteria 3 -->
+                <article class="criteria-card">
+                    <div class="criteria-header">
+                        <h3>3. Design & Kreativität</h3>
+                        <span class="points">20 Pkt</span>
+                    </div>
+                    <ul class="criteria-list">
+                        <li>
+                            <strong>Umsetzung der Vorgaben (10 Pkt)</strong>
+                            <p>Wurden spezifische Anforderungen (z.B. "Erdtöne", "Minimalistisch") getroffen?</p>
+                        </li>
+                        <li>
+                            <strong>Individualität (10 Pkt)</strong>
+                            <p>Hebt sich die Seite von einem Standard-Template ab? Wurden eigene Inhalte genutzt?</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Criteria 4 -->
+                <article class="criteria-card">
+                    <div class="criteria-header">
+                        <h3>4. Technische Umsetzung</h3>
+                        <span class="points">20 Pkt</span>
+                    </div>
+                    <ul class="criteria-list">
+                        <li>
+                            <strong>Funktionalität (10 Pkt)</strong>
+                            <p>Funktionieren alle Links? Werden Bilder korrekt geladen? Keine Layout-Fehler?</p>
+                        </li>
+                        <li>
+                            <strong>Responsivität (10 Pkt)</strong>
+                            <p>Sieht die Seite auf Mobile und Desktop akzeptabel aus?</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <section class="grading-scale">
+                <div class="section-header">
+                    <h2>Notenschlüssel</h2>
+                </div>
+                <div class="grading-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Note</th>
+                                <th>Beschreibung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="grade-badge grade-1">Sehr Gut (1)</span></td>
+                                <td><strong>Power User:</strong> Exzellente Prompts, tiefes Verständnis, kreatives Ergebnis. Hat die KI "gesteuert".</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-2">Gut (2)</span></td>
+                                <td><strong>Kompetenter Anwender:</strong> Gute Prompts, Code verstanden, schönes Ergebnis mit kleinen Schwächen.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-3">Befriedigend (3)</span></td>
+                                <td><strong>Basis-Nutzer:</strong> Funktionierende Seite, aber generisches Design. Code-Verständnis lückenhaft.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-4">Ausreichend (4)</span></td>
+                                <td><strong>Minimalist:</strong> Seite läuft, aber wirkt unfertig. Kaum Anpassungen. Verständnisfragen bereiten Probleme.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-5">Mangelhaft (5)</span></td>
+                                <td><strong>Thema verfehlt:</strong> Seite läuft nicht, Dateien fehlen, oder es wurde nur kopiert ohne Verständnis.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Erstellt für den Unterricht "Web Development mit AI".</p>
+        </div>
+    </footer>
+</body>
+</html>
