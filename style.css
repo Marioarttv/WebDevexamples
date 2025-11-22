@@ -192,11 +192,11 @@ h1 {
 }
 
 .card.featured {
-    grid-column: span 3; /* 2 cards per row */
+    grid-column: span 2; /* Now fits into the 3-col grid (3 cards per row) */
     min-height: 380px;
 }
 
-.card.featured .card-bg {
+.card .card-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -204,14 +204,37 @@ h1 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.1; /* Reduced from 0.15 */
     transition: opacity 0.4s ease, transform 0.8s ease;
     z-index: 1;
+    filter: grayscale(0.5) blur(1px); /* Added blur and grayscale to tone it down */
 }
 
-.card.featured:hover .card-bg {
-    opacity: 0.25;
-    transform: scale(1.1);
+.card:hover .card-bg {
+    opacity: 0.2;
+    transform: scale(1.05);
+    filter: grayscale(0) blur(0);
+}
+
+/* Highlight Card (Prompt Builder) */
+.card.highlight {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 30px rgba(112, 0, 255, 0.15);
+    background: linear-gradient(145deg, rgba(19, 21, 26, 0.9), rgba(112, 0, 255, 0.05));
+}
+
+.card.highlight:hover {
+    box-shadow: 0 0 50px rgba(112, 0, 255, 0.3);
+    transform: translateY(-8px) scale(1.03);
+}
+
+.card.highlight .tag {
+    background: var(--color-primary);
+    color: white;
+}
+
+.card.highlight .link-arrow {
+    color: var(--color-primary);
 }
 
 .tag {
