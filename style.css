@@ -64,6 +64,7 @@ body {
     letter-spacing: -0.02em;
     background: linear-gradient(to right, #fff, #aaa);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -122,6 +123,7 @@ h1 {
 .text-gradient {
     background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -139,39 +141,46 @@ h1 {
 
 .section-header {
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .section-header h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
 }
 
 .card {
+    grid-column: span 2; /* 3 cards per row */
     background: var(--color-surface);
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 24px;
+    padding: 2.5rem;
     text-decoration: none;
     color: inherit;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    min-height: 250px;
+    min-height: 320px;
+    backdrop-filter: blur(10px);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     background: var(--color-surface-hover);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .card-content {
@@ -183,7 +192,8 @@ h1 {
 }
 
 .card.featured {
-    grid-column: span 2;
+    grid-column: span 3; /* 2 cards per row */
+    min-height: 380px;
 }
 
 .card.featured .card-bg {
@@ -194,34 +204,42 @@ h1 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
-    transition: opacity 0.3s ease;
+    opacity: 0.15;
+    transition: opacity 0.4s ease, transform 0.8s ease;
     z-index: 1;
 }
 
 .card.featured:hover .card-bg {
-    opacity: 0.3;
+    opacity: 0.25;
+    transform: scale(1.1);
 }
 
 .tag {
     display: inline-block;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--color-secondary);
-    margin-bottom: 1rem;
-    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    width: fit-content;
 }
 
 .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .card p {
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     flex-grow: 1;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .link-arrow {
@@ -231,24 +249,25 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     transition: gap 0.3s ease;
+    margin-top: auto;
 }
 
 .card:hover .link-arrow {
-    gap: 0.75rem;
+    gap: 1rem;
     color: var(--color-secondary);
 }
 
 /* Footer */
 footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 3rem 0;
+    padding: 4rem 0;
     text-align: center;
     color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
 footer .links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -258,15 +277,31 @@ footer a {
     color: var(--color-text-muted);
     text-decoration: none;
     transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
 
 footer a:hover {
     color: white;
+    border-color: var(--color-secondary);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card {
+        grid-column: span 1;
+    }
+    
+    .card.featured {
+        grid-column: span 1;
+    }
 }
 
 @media (max-width: 768px) {
-    .card.featured {
-        grid-column: span 1;
+    .grid {
+        grid-template-columns: 1fr;
     }
     
     h1 {
