@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Builder | Advanced</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="app-container">
+        <!-- Sidebar / Config -->
+        <aside class="config-panel">
+            <header>
+                <div class="logo">PROMPT.BUILDER</div>
+                <p>Erstelle perfekte AI-Prompts.</p>
+            </header>
+
+            <form id="prompt-form">
+                <!-- Role Selection -->
+                <div class="form-group">
+                    <label for="role">Rolle</label>
+                    <select id="role" name="role">
+                        <option value="expert-dev">Erfahrener Senior Developer</option>
+                        <option value="tutor">Geduldiger Code-Tutor</option>
+                        <option value="ui-designer">Kreativer UI/UX Designer</option>
+                        <option value="debugger">Code Security & Bug Expert</option>
+                    </select>
+                </div>
+
+                <!-- Task Type -->
+                <div class="form-group">
+                    <label>Aufgabe</label>
+                    <div class="button-group" id="task-type-group">
+                        <button type="button" class="select-btn active" data-value="create">Erstellen</button>
+                        <button type="button" class="select-btn" data-value="explain">Erklären</button>
+                        <button type="button" class="select-btn" data-value="refactor">Optimieren</button>
+                        <button type="button" class="select-btn" data-value="debug">Debuggen</button>
+                    </div>
+                    <input type="hidden" id="task-type" value="create">
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="form-group">
+                    <label>Tech Stack</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="HTML"> HTML
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="CSS"> CSS
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="JavaScript"> JS
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="Python"> Python
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="React"> React
+                        </label>
+                        <label class="checkbox-btn">
+                            <input type="checkbox" name="tech" value="Tailwind"> Tailwind
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Context -->
+                <div class="form-group">
+                    <label for="context">Beschreibung & Kontext</label>
+                    <textarea id="context" placeholder="Beschreibe genau, was du machen möchtest... (z.B. 'Eine Landing Page für eine Kaffeemarke mit Erdtönen')"></textarea>
+                </div>
+
+                <!-- Constraints -->
+                <div class="form-group">
+                    <label>Qualitäts-Filter (Constraints)</label>
+                    <div class="checkbox-list">
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="constraint" value="clean-code" checked>
+                            <span>Sauberer, kommentierter Code</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="constraint" value="semantic-html" checked>
+                            <span>Semantisches HTML</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="constraint" value="no-libs">
+                            <span>Keine externen Libraries (Vanilla)</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="constraint" value="beginner">
+                            <span>Anfängerfreundliche Erklärung</span>
+                        </label>
+                        <label class="checkbox-row">
+                            <input type="checkbox" name="constraint" value="mobile-first">
+                            <span>Mobile-First Design</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </aside>
+
+        <!-- Main / Preview -->
+        <main class="preview-panel">
+            <div class="preview-header">
+                <h2>Dein Prompt</h2>
+                <button id="copy-btn" class="btn-primary">
+                    <span class="icon">📋</span> Kopieren
+                </button>
+            </div>
+            
+            <div class="prompt-output-container">
+                <pre id="prompt-output" class="prompt-text"></pre>
+            </div>
+
+            <div class="tips-panel">
+                <h3>💡 Pro-Tipps</h3>
+                <ul>
+                    <li>Sei so spezifisch wie möglich im Kontext-Feld.</li>
+                    <li>Nutze "Erklären", wenn du Code nicht verstehst.</li>
+                    <li>Kopiere den Prompt in ChatGPT, Claude oder Gemini.</li>
+                </ul>
+            </div>
+            
+            <a href="../index.html" class="back-link">&larr; Zurück zum Hub</a>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

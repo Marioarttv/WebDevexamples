@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke nachhaltigen Kaffeegenuss. Fair gehandelt, schonend geröstet und minimalistisch verpackt.">
+    <title>Terra Kaffeerösterei | Nachhaltiger Genuss</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="#" class="logo">TERRA</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#products">Kaffee</a></li>
+                    <li><a href="#sustainability">Nachhaltigkeit</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="images/hero-bg.png" alt="Kaffeebohnen Hintergrund" loading="eager">
+            </div>
+            <div class="hero-content container">
+                <h1>Purer Geschmack.<br>Reines Gewissen.</h1>
+                <p>Handverlesene Bohnen, direkt von Kaffeebauern, die wir beim Namen kennen.</p>
+                <a href="#products" class="btn btn-primary">Entdecke unsere Röstungen</a>
+            </div>
+        </section>
+
+        <section id="about" class="about section-padding">
+            <div class="container grid-2">
+                <div class="about-text">
+                    <span class="overline">Unsere Philosophie</span>
+                    <h2>Zurück zum Ursprung</h2>
+                    <p>Wir glauben, dass guter Kaffee Zeit braucht. Zeit zu wachsen, Zeit zu reifen und Zeit, um schonend geröstet zu werden. In unserer kleinen Manufaktur verbinden wir traditionelles Handwerk mit modernem, minimalistischem Design.</p>
+                    <p>Jede Bohne erzählt eine Geschichte von ihrem Ursprung, dem Boden und den Menschen, die sie geerntet haben.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for a secondary image if needed, or just text layout -->
+                    <div class="image-frame"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="overline">Sortiment</span>
+                    <h2>Unsere Auswahl</h2>
+                </div>
+                
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-coffee.png" alt="Terra Signature Blend Kaffeepackung">
+                        </div>
+                        <div class="product-info">
+                            <h3>Signature Blend</h3>
+                            <p class="tasting-notes">Schokolade • Nuss • Sanfte Säure</p>
+                            <p class="price">24,90 € / 1kg</p>
+                            <button class="btn btn-secondary">In den Warenkorb</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-coffee.png" alt="Terra Espresso Kaffeepackung" style="filter: hue-rotate(15deg);">
+                        </div>
+                        <div class="product-info">
+                            <h3>Dark Espresso</h3>
+                            <p class="tasting-notes">Karamell • Dunkle Beere • Kräftig</p>
+                            <p class="price">26,90 € / 1kg</p>
+                            <button class="btn btn-secondary">In den Warenkorb</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-coffee.png" alt="Terra Filter Kaffeepackung" style="filter: hue-rotate(-15deg);">
+                        </div>
+                        <div class="product-info">
+                            <h3>Mild Filter</h3>
+                            <p class="tasting-notes">Jasmin • Zitrus • Leicht</p>
+                            <p class="price">28,90 € / 1kg</p>
+                            <button class="btn btn-secondary">In den Warenkorb</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sustainability" class="sustainability section-padding">
+            <div class="container text-center">
+                <h2>Nachhaltigkeit ist kein Trend.</h2>
+                <p class="lead">Sondern unsere Basis.</p>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Direkthandel</h3>
+                        <p>Wir zahlen Preise weit über dem Fairtrade-Niveau.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Plastikfrei</h3>
+                        <p>Unsere Verpackungen sind zu 100% kompostierbar.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>CO2-Neutral</h3>
+                        <p>Wir kompensieren jeden Schritt unserer Lieferkette.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">TERRA</span>
+                    <p>Kaffee in seiner reinsten Form.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">Alle Kaffees</a></li>
+                        <li><a href="#">Zubehör</a></li>
+                        <li><a href="#">Abo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <form action="#" class="newsletter-form">
+                        <input type="email" placeholder="Deine E-Mail Adresse" required>
+                        <button type="submit" class="btn btn-small">Anmelden</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Terra Kaffeerösterei. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
