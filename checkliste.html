@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Website-Checkliste | Notenrechner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Checkliste Specific Styles */
+        .checklist-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .checklist-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #7000ff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .checklist-hero .lead {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+        }
+
+        /* Grade Display */
+        .grade-display {
+            background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
+            border: 2px solid rgba(112, 0, 255, 0.3);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .grade-display h2 {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        .grade-value {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7000ff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .points-display {
+            font-size: 1.3rem;
+            color: var(--color-secondary);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .grade-description {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-top: 1.5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7000ff, #00d4ff);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Criteria Sections */
+        .criteria-section {
+            background: var(--color-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .criteria-section:hover {
+            border-color: rgba(112, 0, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .criteria-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .criteria-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .criteria-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(112, 0, 255, 0.2), rgba(0, 212, 255, 0.2));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .criteria-title h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        .max-points {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        /* Point Input */
+        .point-input-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .point-input {
+            width: 70px;
+            padding: 0.6rem 0.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .point-input:focus {
+            outline: none;
+            border-color: #7000ff;
+            box-shadow: 0 0 15px rgba(112, 0, 255, 0.3);
+        }
+
+        .point-input:invalid {
+            border-color: #ef4444;
+        }
+
+        .point-label {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Sub-criteria */
+        .sub-criteria {
+            padding-left: 3.5rem;
+        }
+
+        .sub-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sub-item:first-child {
+            border-top: none;
+        }
+
+        .checkbox-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-wrapper input[type="checkbox"]:checked {
+            background: linear-gradient(135deg, #7000ff, #00d4ff);
+            border-color: transparent;
+        }
+
+        .checkbox-wrapper input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .sub-item label {
+            color: var(--color-text-muted);
+            cursor: pointer;
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+
+        .sub-item:has(input:checked) label {
+            color: white;
+        }
+
+        /* Grid Layout */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grade-display {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+        }
+
+        .back-nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .back-nav a:hover {
+            color: white;
+        }
+
+        /* Grade Scale Reference */
+        .grade-scale-mini {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .grade-scale-mini h4 {
+            margin: 0 0 1rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .grade-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .grade-row:last-child {
+            border-bottom: none;
+        }
+
+        .grade-row .note {
+            font-weight: 600;
+        }
+
+        .grade-1 { color: #34d399; }
+        .grade-2 { color: #60a5fa; }
+        .grade-3 { color: #fbbf24; }
+        .grade-4 { color: #fb923c; }
+        .grade-5 { color: #f87171; }
+        .grade-6 { color: #9ca3af; }
+
+        /* Bonus Section */
+        .criteria-section.bonus-section {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
+            border: 2px dashed rgba(251, 191, 36, 0.4);
+        }
+
+        .criteria-section.bonus-section:hover {
+            border-color: rgba(251, 191, 36, 0.6);
+        }
+
+        .criteria-section.bonus-section .criteria-icon {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.2));
+        }
+
+        .bonus-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .bonus-info {
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #fbbf24;
+        }
+
+        .bonus-display {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bonus-display .label {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .bonus-display .value {
+            color: #fbbf24;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .grade-display {
+                position: relative;
+                background: white;
+                border: 2px solid #7000ff;
+            }
+            
+            .criteria-section {
+                break-inside: avoid;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .grade-display.updated {
+            animation: pulse 0.3s ease;
+        }
+
+        /* Name Input Section */
+        .name-input-section {
+            background: rgba(112, 0, 255, 0.1);
+            border: 1px dashed rgba(112, 0, 255, 0.3);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .name-input-section label {
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .name-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.6rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .name-input:focus {
+            outline: none;
+            border-color: #7000ff;
+        }
+
+        /* Info Tooltip */
+        .info-tip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">AI.WEBDEV</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="back-nav">
+                <a href="index.html">&larr; Zurück zur Übersicht</a>
+            </div>
+
+            <section class="checklist-hero">
+                <h1>🎯 Meine Website-Checkliste</h1>
+                <p class="lead">Überprüfe hier transparent, wie sich deine Note zusammensetzt. Trage deine erreichten Punkte ein – die Note wird automatisch berechnet.</p>
+            </section>
+
+            <div class="name-input-section">
+                <label for="studentName">👤 Mein Name:</label>
+                <input type="text" id="studentName" class="name-input" placeholder="Vorname Nachname">
+            </div>
+
+            <div class="info-tip">
+                💡 Tipp: Trage für jedes Kriterium die Punkte ein, die du erreicht hast. Die Checkboxen helfen dir beim Überblick.
+            </div>
+
+            <div class="checklist-grid">
+                <!-- Grade Display (Sticky Sidebar) -->
+                <aside>
+                    <div class="grade-display" id="gradeDisplay">
+                        <h2>Deine aktuelle Note</h2>
+                        <div class="grade-value" id="gradeValue">–</div>
+                        <div class="points-display">
+                            <span id="currentPoints">0</span> / <span id="maxPoints">100</span> Punkte
+                            <span id="bonusDisplay" style="color: #fbbf24; display: none;"> (+<span id="bonusPoints">0</span> Bonus)</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="grade-description" id="gradeDescription">
+                            Trage deine Punkte ein, um deine Note zu sehen.
+                        </div>
+                    </div>
+
+                    <div class="grade-scale-mini">
+                        <h4>Notenschlüssel</h4>
+                        <div class="grade-row">
+                            <span class="note grade-1">1,0</span>
+                            <span>96–100%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-1">1,5</span>
+                            <span>91–95%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-2">2,0</span>
+                            <span>85–90%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-2">2,5</span>
+                            <span>80–84%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-3">3,0</span>
+                            <span>70–79%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-3">3,5</span>
+                            <span>65–69%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-4">4,0</span>
+                            <span>55–64%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-4">4,5</span>
+                            <span>50–54%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-5">5,0</span>
+                            <span>30–49%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-5">5,5</span>
+                            <span>18–29%</span>
+                        </div>
+                        <div class="grade-row">
+                            <span class="note grade-6">6,0</span>
+                            <span>0–17%</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Criteria List -->
+                <div class="criteria-list-container">
+                    
+                    <!-- 1. Technik-Grundlagen -->
+                    <div class="criteria-section" data-max="15">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">📁</div>
+                                <div>
+                                    <h3>Technik-Grundlagen</h3>
+                                    <span class="max-points">max. 15 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="15" value="0" data-criteria="technik">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="tech1">
+                                </div>
+                                <label for="tech1"><strong>index.html</strong> Datei wurde erstellt</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="tech2">
+                                </div>
+                                <label for="tech2"><strong>style.css</strong> Datei wurde erstellt</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="tech3">
+                                </div>
+                                <label for="tech3">CSS-Datei ist korrekt im HTML mit <code>&lt;link&gt;</code> verlinkt</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Seitenstruktur -->
+                    <div class="criteria-section" data-max="15">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">🔗</div>
+                                <div>
+                                    <h3>Seitenstruktur</h3>
+                                    <span class="max-points">max. 15 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="15" value="0" data-criteria="struktur">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="struktur1">
+                                </div>
+                                <label for="struktur1">Mindestens eine <strong>weitere HTML-Seite</strong> (Unterseite) erstellt</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="struktur2">
+                                </div>
+                                <label for="struktur2">Unterseite ist von der <strong>Startseite aus verlinkt</strong> (funktionierender Link)</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="struktur3">
+                                </div>
+                                <label for="struktur3">Navigation ist <strong>logisch und benutzerfreundlich</strong></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Medien -->
+                    <div class="criteria-section" data-max="10">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">🖼️</div>
+                                <div>
+                                    <h3>Medien</h3>
+                                    <span class="max-points">max. 10 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="10" value="0" data-criteria="medien">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="medien1">
+                                </div>
+                                <label for="medien1">Mindestens <strong>ein Bild</strong> wurde eingebunden</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="medien2">
+                                </div>
+                                <label for="medien2">Bild wird <strong>korrekt angezeigt</strong> (Pfad stimmt)</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="medien3">
+                                </div>
+                                <label for="medien3">Bild hat einen <strong>alt-Text</strong> für Barrierefreiheit</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Design & Responsiveness -->
+                    <div class="criteria-section" data-max="20">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">🎨</div>
+                                <div>
+                                    <h3>Design & Responsiveness</h3>
+                                    <span class="max-points">max. 20 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="20" value="0" data-criteria="design">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="design1">
+                                </div>
+                                <label for="design1">Die Seite sieht <strong>ansprechend und durchdacht</strong> aus</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="design2">
+                                </div>
+                                <label for="design2"><strong>Einheitliches Farbschema</strong> und Schriftarten verwendet</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="design3">
+                                </div>
+                                <label for="design3">Die Seite funktioniert auf <strong>Desktop UND Handy</strong> (Responsive)</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="design4">
+                                </div>
+                                <label for="design4">Keine überlappenden Elemente oder Layoutfehler</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Planung -->
+                    <div class="criteria-section" data-max="15">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">📋</div>
+                                <div>
+                                    <h3>Planung</h3>
+                                    <span class="max-points">max. 15 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="15" value="0" data-criteria="planung">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="planung1">
+                                </div>
+                                <label for="planung1"><strong>Planungsdokument</strong> wurde ausgefüllt abgegeben</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="planung2">
+                                </div>
+                                <label for="planung2"><strong>Zielsetzung</strong> ist klar formuliert (Was? Für wen?)</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="planung3">
+                                </div>
+                                <label for="planung3"><strong>Struktur der Seite</strong> wurde vorher skizziert</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Dokumentation -->
+                    <div class="criteria-section" data-max="15">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">📝</div>
+                                <div>
+                                    <h3>Dokumentation</h3>
+                                    <span class="max-points">max. 15 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="15" value="0" data-criteria="doku">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="doku1">
+                                </div>
+                                <label for="doku1"><strong>Dokumentation</strong> des Arbeitsprozesses vorhanden</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="doku2">
+                                </div>
+                                <label for="doku2">Verwendete <strong>AI-Prompts</strong> wurden festgehalten</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="doku3">
+                                </div>
+                                <label for="doku3"><strong>Probleme und Lösungen</strong> wurden dokumentiert</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Reflexion -->
+                    <div class="criteria-section" data-max="10">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">🤔</div>
+                                <div>
+                                    <h3>Reflexion</h3>
+                                    <span class="max-points">max. 10 Punkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="10" value="0" data-criteria="reflexion">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="reflexion1">
+                                </div>
+                                <label for="reflexion1"><strong>Was habe ich gelernt?</strong> – Eigene Lernerfolge reflektiert</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="reflexion2">
+                                </div>
+                                <label for="reflexion2"><strong>Was war schwierig?</strong> – Herausforderungen benannt</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="reflexion3">
+                                </div>
+                                <label for="reflexion3"><strong>Was würde ich anders machen?</strong> – Verbesserungsideen formuliert</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Bonuspunkte (Optional) -->
+                    <div class="criteria-section bonus-section" data-max="15" data-bonus="true">
+                        <div class="criteria-header">
+                            <div class="criteria-title">
+                                <div class="criteria-icon">⭐</div>
+                                <div>
+                                    <h3>Bonuspunkte <span class="bonus-badge">OPTIONAL</span></h3>
+                                    <span class="max-points">max. 15 Bonuspunkte</span>
+                                </div>
+                            </div>
+                            <div class="point-input-group">
+                                <input type="number" class="point-input" min="0" max="15" value="0" data-criteria="bonus">
+                                <span class="point-label">Punkte</span>
+                            </div>
+                        </div>
+                        <div class="bonus-info">
+                            ⚡ Bonuspunkte für Schüler, die über die Anforderungen hinausgehen!
+                        </div>
+                        <div class="sub-criteria">
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="bonus1">
+                                </div>
+                                <label for="bonus1"><strong>JavaScript eingebaut</strong> – Interaktive Elemente wie Buttons, Animationen oder Formulare</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="bonus2">
+                                </div>
+                                <label for="bonus2"><strong>Mehr als eine Unterseite</strong> – Umfangreiche Website-Struktur</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="bonus3">
+                                </div>
+                                <label for="bonus3"><strong>CSS-Animationen</strong> – Hover-Effekte, Übergänge oder komplexe Animationen</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="bonus4">
+                                </div>
+                                <label for="bonus4"><strong>Besondere Kreativität</strong> – Außergewöhnliches Design oder innovative Ideen</label>
+                            </div>
+                            <div class="sub-item">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="bonus5">
+                                </div>
+                                <label for="bonus5"><strong>Barrierefreiheit</strong> – ARIA-Labels, Tastatur-Navigation, Kontraste beachtet</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Erstellt für den Unterricht "Web Development mit AI" | 10. Klasse Informatik</p>
+        </div>
+    </footer>
+
+    <script>
+        // Grade Calculation Logic (mit Halbnotenschritten)
+        const gradeDescriptions = {
+            '1,0': "🌟 Hervorragend! Du hast die KI als Werkzeug perfekt gemeistert!",
+            '1,5': "🌟 Sehr gut! Ein überzeugendes Ergebnis mit minimalen Verbesserungsmöglichkeiten.",
+            '2,0': "👍 Gut gemacht! Deine Seite zeigt solide Arbeit.",
+            '2,5': "👍 Gut! Mit kleinen Verbesserungen wäre es noch besser.",
+            '3,0': "✓ Befriedigend. Die Grundlagen sind solide umgesetzt.",
+            '3,5': "✓ Befriedigend. Es gibt noch Luft nach oben.",
+            '4,0': "⚠️ Ausreichend. Die Mindestanforderungen sind erfüllt.",
+            '4,5': "⚠️ Ausreichend. Die Seite wirkt noch etwas unfertig.",
+            '5,0': "❌ Mangelhaft. Es fehlen wichtige Elemente.",
+            '5,5': "❌ Mangelhaft. Die Seite funktioniert nicht richtig.",
+            '6,0': "❌ Ungenügend. Zu viele Anforderungen wurden nicht erfüllt."
+        };
+
+        const gradeColors = {
+            '1,0': '#34d399',
+            '1,5': '#34d399',
+            '2,0': '#60a5fa',
+            '2,5': '#60a5fa',
+            '3,0': '#fbbf24',
+            '3,5': '#fbbf24',
+            '4,0': '#fb923c',
+            '4,5': '#fb923c',
+            '5,0': '#f87171',
+            '5,5': '#f87171',
+            '6,0': '#9ca3af'
+        };
+
+        function calculateGrade(percentage) {
+            if (percentage >= 96) return '1,0';
+            if (percentage >= 91) return '1,5';
+            if (percentage >= 85) return '2,0';
+            if (percentage >= 80) return '2,5';
+            if (percentage >= 70) return '3,0';
+            if (percentage >= 65) return '3,5';
+            if (percentage >= 55) return '4,0';
+            if (percentage >= 50) return '4,5';
+            if (percentage >= 30) return '5,0';
+            if (percentage >= 18) return '5,5';
+            return '6,0';
+        }
+
+        function updateGrade() {
+            const inputs = document.querySelectorAll('.point-input');
+            let totalPoints = 0;
+            let maxPoints = 0;
+            let bonusPoints = 0;
+
+            inputs.forEach(input => {
+                const section = input.closest('.criteria-section');
+                const max = parseInt(section.dataset.max);
+                const isBonus = section.dataset.bonus === 'true';
+                const value = Math.min(Math.max(parseInt(input.value) || 0, 0), max);
+                input.value = value; // Clamp value
+                
+                if (isBonus) {
+                    bonusPoints = value;
+                } else {
+                    totalPoints += value;
+                    maxPoints += max;
+                }
+            });
+
+            // Add bonus points to total (can exceed 100%)
+            const totalWithBonus = totalPoints + bonusPoints;
+            const percentage = Math.min((totalWithBonus / maxPoints) * 100, 115); // Cap at 115% for display
+            const grade = calculateGrade((totalWithBonus / maxPoints) * 100);
+
+            // Update display
+            document.getElementById('currentPoints').textContent = totalPoints;
+            document.getElementById('maxPoints').textContent = maxPoints;
+            document.getElementById('gradeValue').textContent = grade;
+            document.getElementById('gradeDescription').textContent = gradeDescriptions[grade];
+
+            // Update bonus display
+            const bonusDisplay = document.getElementById('bonusDisplay');
+            const bonusPointsEl = document.getElementById('bonusPoints');
+            if (bonusPoints > 0) {
+                bonusDisplay.style.display = 'inline';
+                bonusPointsEl.textContent = bonusPoints;
+            } else {
+                bonusDisplay.style.display = 'none';
+            }
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+
+            // Update grade value color
+            const gradeValue = document.getElementById('gradeValue');
+            gradeValue.style.background = gradeColors[grade];
+            gradeValue.style.webkitBackgroundClip = 'text';
+            gradeValue.style.backgroundClip = 'text';
+
+            // Animation feedback
+            const gradeDisplay = document.getElementById('gradeDisplay');
+            gradeDisplay.classList.add('updated');
+            setTimeout(() => gradeDisplay.classList.remove('updated'), 300);
+
+            // Save to localStorage
+            saveProgress();
+        }
+
+        function saveProgress() {
+            const data = {
+                name: document.getElementById('studentName').value,
+                inputs: {},
+                checkboxes: {}
+            };
+
+            document.querySelectorAll('.point-input').forEach(input => {
+                data.inputs[input.dataset.criteria] = input.value;
+            });
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                data.checkboxes[checkbox.id] = checkbox.checked;
+            });
+
+            localStorage.setItem('websiteChecklist', JSON.stringify(data));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('websiteChecklist');
+            if (saved) {
+                const data = JSON.parse(saved);
+                
+                if (data.name) {
+                    document.getElementById('studentName').value = data.name;
+                }
+
+                if (data.inputs) {
+                    Object.keys(data.inputs).forEach(key => {
+                        const input = document.querySelector(`[data-criteria="${key}"]`);
+                        if (input) input.value = data.inputs[key];
+                    });
+                }
+
+                if (data.checkboxes) {
+                    Object.keys(data.checkboxes).forEach(key => {
+                        const checkbox = document.getElementById(key);
+                        if (checkbox) checkbox.checked = data.checkboxes[key];
+                    });
+                }
+
+                updateGrade();
+            }
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.point-input').forEach(input => {
+            input.addEventListener('input', updateGrade);
+            input.addEventListener('change', updateGrade);
+        });
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', saveProgress);
+        });
+
+        document.getElementById('studentName').addEventListener('input', saveProgress);
+
+        // Initial load
+        loadProgress();
+        
+        // Calculate max points on load
+        let maxPoints = 0;
+        document.querySelectorAll('.criteria-section').forEach(section => {
+            maxPoints += parseInt(section.dataset.max);
+        });
+        document.getElementById('maxPoints').textContent = maxPoints;
+    </script>
+</body>
+</html>
