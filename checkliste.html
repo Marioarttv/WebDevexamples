@@ -32,6 +32,14 @@
             color: var(--color-text-muted);
         }
 
+        /* Sticky Sidebar */
+        .grade-sidebar {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+        }
+
         /* Grade Display */
         .grade-display {
             background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
@@ -40,9 +48,6 @@
             padding: 2rem;
             text-align: center;
             margin-bottom: 2rem;
-            position: sticky;
-            top: 1rem;
-            z-index: 100;
             backdrop-filter: blur(10px);
         }
 
@@ -260,9 +265,10 @@
                 grid-template-columns: 1fr;
             }
             
-            .grade-display {
+            .grade-sidebar {
                 position: relative;
                 top: 0;
+                max-height: none;
             }
         }
 
@@ -451,6 +457,35 @@
             color: #00d4ff;
             margin-bottom: 2rem;
         }
+
+        /* Reset Button */
+        .reset-btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+            border: 2px solid rgba(239, 68, 68, 0.4);
+            border-radius: 12px;
+            color: #f87171;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .reset-btn:hover {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.2));
+            border-color: rgba(239, 68, 68, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .reset-btn:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -484,7 +519,7 @@
 
             <div class="checklist-grid">
                 <!-- Grade Display (Sticky Sidebar) -->
-                <aside>
+                <aside class="grade-sidebar">
                     <div class="grade-display" id="gradeDisplay">
                         <h2>Deine aktuelle Note</h2>
                         <div class="grade-value" id="gradeValue">–</div>
@@ -549,6 +584,10 @@
                             <span>0–17%</span>
                         </div>
                     </div>
+
+                    <button class="reset-btn" id="resetBtn" type="button">
+                        🔄 Alles zurücksetzen
+                    </button>
                 </aside>
 
                 <!-- Criteria List -->
@@ -1040,6 +1079,26 @@
         });
 
         document.getElementById('studentName').addEventListener('input', saveProgress);
+
+        // Reset button
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            if (confirm('Möchtest du wirklich alle Eingaben zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden.')) {
+                // Clear localStorage
+                localStorage.removeItem('websiteChecklist');
+
+                // Reset all inputs
+                document.getElementById('studentName').value = '';
+                document.querySelectorAll('.point-input').forEach(input => {
+                    input.value = '0';
+                });
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+
+                // Update the grade display
+                updateGrade();
+            }
+        });
 
         // Initial load
         loadProgress();
